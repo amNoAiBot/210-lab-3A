@@ -52,7 +52,7 @@ int main() {
     // Here, identifying information in cout form similar to sample-comment.cpp is provided.
     printIdentification("Lab 3A: Restaurant Struct Objects Practice\n");
 
-    // Call the user input function 4 times, once for each restaurant.
+    // Call the user input function 3 times, once for each restaurant.
     // User input is gotten by this function about Restaurant objects and the function returns a Restaurant data type.
     Restaurant restaurant1, restaurant2, restaurant3, restaurant4;
     restaurant1 = userInputRestaurantInfo(1);    // Serial number is sent as argument to userInputRestaurantInfo() function.
@@ -61,7 +61,7 @@ int main() {
     restaurant4 = userInputRestaurantInfo(4);
 
     // Now output the five restaurants in a nice table
-    // Call the print output function 4 times, once for each restaurant.
+    // Call the print output function 3 times, once for each restaurant.
     printOutputHeading();
     printOutputRestaurantData(1, restaurant1);    // Serial number and Restaurant object are sent as arguments to printOutputRestaurantData().
     printOutputRestaurantData(2, restaurant2);
@@ -164,7 +164,7 @@ void printWarningIfUserEnteredWrongInput(int resultOfUserInput) {
 **********************************************************************/
 void printOutputHeading() {
     cout << "\n\n";
-    cout << "#  Restaurant Name      Address                   Rating Year Founded Avg. Price\n";
+    cout << "#  Restaurant Name        Address                   Rating Year Founded Avg. Price\n";
     cout << "== ==================== ========================= ====== ============ ===========\n";
 }
 

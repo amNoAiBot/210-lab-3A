@@ -2,7 +2,7 @@
 // IDE used: Visual Studio Code
 
 /*********************************************************************
-* Importing C++ Built-in Library Functions
+*               Importing C++ Built-in Library Functions
 **********************************************************************/
 #include <iostream>
 using namespace std;
@@ -19,9 +19,10 @@ using std::getline;
 #include <cstdlib>
 
 /*********************************************************************
-* User defined data types (struct) are
-* defined here before main().
+*                  User defined data types (struct) are
+*                      defined here before main().
 **********************************************************************/
+
 struct Restaurant {
     string eateryName;
     string address;
@@ -31,10 +32,11 @@ struct Restaurant {
 };
 
 /*********************************************************************
-* User Defined Function Prototypes are defined
-* here as the actual functions are defined
-* below main().
+*             User Defined Function Prototypes are defined
+*               here as the actual functions are defined
+*                             below main().
 **********************************************************************/
+
 // Declaring function prototypes. Function definitions must precede function calls,
 // or you can use the following workaround of defining prototypes instead of having
 // to define the functions before main().
@@ -45,24 +47,26 @@ void printOutputHeading();
 void printOutputRestaurantData(int, Restaurant);
 
 /*********************************************************************
-* The main() function
+*                           The main() function
 **********************************************************************/
+
 int main() {
+
     // Identifying information in comment form is included at the top of this file.
     // Here, identifying information in cout form similar to sample-comment.cpp is provided.
     printIdentification("Lab 3A: Restaurant Struct Objects Practice\n");
 
-    // Call the user input function 4 times, once for each restaurant.
+    // Call the user input function 3 times, once for each restaurant.
     // User input is gotten by this function about Restaurant objects and the function returns a Restaurant data type.
     Restaurant restaurant1, restaurant2, restaurant3, restaurant4;
-    restaurant1 = userInputRestaurantInfo(1);    // Serial number is sent as argument to userInputRestaurantInfo() function.
+    restaurant1 = userInputRestaurantInfo(1);     // Serial number is sent as argument to userInputRestaurantInfo() function.
     restaurant2 = userInputRestaurantInfo(2);
     restaurant3 = userInputRestaurantInfo(3);
     restaurant4 = userInputRestaurantInfo(4);
 
     // Now output the five restaurants in a nice table
-    // Call the print output function 4 times, once for each restaurant.
-    printOutputHeading();
+    // Call the print output function 3 times, once for each restaurant.
+    printOutputHeading();                   // Print the heading of the nice table
     printOutputRestaurantData(1, restaurant1);    // Serial number and Restaurant object are sent as arguments to printOutputRestaurantData().
     printOutputRestaurantData(2, restaurant2);
     printOutputRestaurantData(3, restaurant3);
@@ -70,15 +74,16 @@ int main() {
     cout << "\n";
 
     return 0;
+
 }
 
 /*********************************************************************
-* User Defined Functions
+*                       User Defined Functions
 **********************************************************************/
 
 /*********************************************************************
 * Function: User Input Function: Ask user for input about restaurants.
-* Return user defined struct Restaurant data type to the calling function.
+*           Return user defined struct Restaurant data type to the calling function.
 *
 * getline() is used get string inputs with spaces from the user.
 *
@@ -92,15 +97,17 @@ int main() {
 * Finally, user defined data type struct Restaurant is returned.
 *
 * Parameter:
-* Sequence #: Data type: int., Pass-by-Value.
-* Restaurant sequence #
+*   Sequence #: Data type: int., Pass-by-Value.
+*               Restaurant sequence #
 *
 * Return:
-* Restaurant:    Data type: User defined struct Restaurant data type.
-* From the user input about the 5 attributes of the restaurant is gotten.
-* The Restaurant object is returned to the calling function.
+*   Restaurant:    Data type: User defined struct Restaurant data type.
+*               From the user input about the 5 attributes of the restaurant is gotten.
+*               The Restaurant object is returned to the calling function.
 **********************************************************************/
+
 Restaurant userInputRestaurantInfo(int serialNumber) {
+
     Restaurant inputRestaurant;
 
     // Get user input about each restaurant
@@ -145,9 +152,11 @@ Restaurant userInputRestaurantInfo(int serialNumber) {
 }
 
 void printWarningIfUserEnteredWrongInput(int resultOfUserInput) {
-    if (!resultOfUserInput) {
+
+    if(!resultOfUserInput) {
         cout << "You did not enter a number, so your input will be considered as if you entered a zero.\n";
     }
+
 }
 
 /*********************************************************************
@@ -157,15 +166,18 @@ void printWarningIfUserEnteredWrongInput(int resultOfUserInput) {
 * about the restaurants are printed.
 *
 * Parameter:
-* None.
+*   None.
 *
 * Return:
-* None.
+*   None.
 **********************************************************************/
+
 void printOutputHeading() {
-    cout << "\n\n";
-    cout << "#  Restaurant Name      Address                   Rating Year Founded Avg. Price\n";
-    cout << "== ==================== ========================= ====== ============ ===========\n";
+
+  cout << "\n\n";
+  cout << "#  Restaurant Name      Address                   Rating Year Founded Avg. Price\n";
+  cout << "== ==================== ========================= ====== ============ ===========\n";
+
 }
 
 /*********************************************************************
@@ -180,17 +192,19 @@ void printOutputHeading() {
 * (during each call of the function).
 *
 * Parameter:
-* 1) Sequence #:   Data type: int.
-* Pass-by-Value.
-* Restaurant sequence #
+*   1) Sequence #:  Data type: int.
+*                   Pass-by-Value.
+*                   Restaurant sequence #
 *
-* 2) Restaurant:     Data type: User defined struct Restaurant data type.
-* Pass-by-Value
+*   2) Restaurant:     Data type: User defined struct Restaurant data type.
+*                   Pass-by-Value
 *
 * Return:
-* None.
+*   None.
 **********************************************************************/
+
 void printOutputRestaurantData(int serialNum, Restaurant outputRestaurant) {
+
     // Align all data nicely towards the left of the table
     cout.setf(ios::left);
 
@@ -213,7 +227,7 @@ void printOutputRestaurantData(int serialNum, Restaurant outputRestaurant) {
     cout << outputRestaurant.yearStarted;
 
     cout.setf(ios::fixed);
-    cout.precision(2);     // Take only 2 decimal places of Avg. Price. E.g. If the user enters 3.21555 -> 3.22
+    cout.precision(2);        // Take only 2 decimal places of Avg. Price. E.g. If the user enters 3.21555 -> 3.22
     cout.width(4);
     cout << outputRestaurant.avgPrice << "\n";
 }
@@ -223,16 +237,18 @@ void printOutputRestaurantData(int serialNum, Restaurant outputRestaurant) {
 * sample-comment.cpp is provided here.
 *
 * Parameters:
-* labDescription: Data type: string.
-* Pass-by-Value.
-* Lab description is passed as the string parameter.
+*   labDescription: Data type: string.
+*                   Pass-by-Value.
+*                   Lab description is passed as the string parameter.
 *
 * Return: None.
 **********************************************************************/
 
 // Identifying information in comment form is included at the top of this file.
 // Here, identifying information in cout form similar to sample-comment.cpp is provided.
+
 void printIdentification(string labDescription) {
+
     cout << "######################################################################\n";
     cout << "\t\t\tIdentifying Information\n";
     cout << "######################################################################\n";
